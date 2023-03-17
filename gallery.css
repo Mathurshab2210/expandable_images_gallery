@@ -1,0 +1,107 @@
+.gallery{
+    --s:150px;
+    --g:10px;
+    --f:1.5;
+
+    display: grid;
+    gap:20px;
+    width:70vw;
+    aspect-ratio: 1;
+    grid-template-columns: repeat(3,auto);
+    /* border: double black 5px; */
+    border-radius:5%;
+    padding:3%;
+    background-color: #23a6d5;
+    
+}
+.gallery > img{
+    width: 5%;
+    height: 5%;
+    min-width: 100%;
+    min-height: 100%;
+    cursor: pointer;
+    filter: grayscale(75%);
+    transition: 0.35s radial;
+    padding: 2%;
+}
+.gallery img:hover{
+    filter: grayscale(0);
+    width: calc(var(--f)*var(--s));
+    height:calc(var(--f)*var(--s));
+    padding: 2%;
+    margin: 2%;
+    border-radius:10%;
+
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content:center;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite; */
+}
+/* @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      /* font-size: 15px; */
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media (max-width:740px) {
+    .gallery{
+        width:65vw;
+        margin: 0 auto;
+    }
+    
+}
+@media (max-width:540px) {
+    .gallery{
+        width:75vw;
+        margin: 0 auto;
+    }
+    .gallery img:hover{
+        filter: grayscale(0);
+        width: 100%;
+        height:85%;
+        padding: 2%;
+        margin: 2%;
+        border-radius:10%;
+    
+    }
+}
